@@ -62,7 +62,7 @@ exports.handler = function(event, context) {
 				var group=awslogsData.logGroup;
 				var rs = re.exec(val.message);
 
-				val.requestID = (rs!==null) ? rs[1] : null;
+				val.requestID = (rs!==null) ? rs[0] : null;
 				val.logStream = stream;
 				val.logGroup = group;
 				req.end(JSON.stringify(val));
